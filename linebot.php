@@ -1526,11 +1526,11 @@ class LineBotClass extends LINEBot
 			$label = null;
 		}
 		// オプションのチェック
-		$initial   = !empty($options['initial'])   ? $initial : null;
-		$limit_max = !empty($options['limit_max']) ? $limit_max : null;
-		$limit_min = !empty($options['limit_min']) ? $limit_min : null;
+		$initial   = !empty($options['initial'])   ? $options['initial'] : null;
+		$limit_max = !empty($options['limit_max']) ? $options['limit_max'] : null;
+		$limit_min = !empty($options['limit_min']) ? $options['limit_min'] : null;
 
-		return $this->create_action_builder("date",$label,["post"=>$post],"datetime",$initial,$limit_max,$limit_min);
+		return $this->create_action_builder("date",$label,["post"=>$post],$date_mode,$initial,$limit_max,$limit_min);
 	}
 
 	/**
@@ -1602,11 +1602,11 @@ class LineBotClass extends LINEBot
 			return false;
 		}
 		// オプションのチェック
-		$initial   = !empty($options['initial'])   ? $initial : null;
-		$limit_max = !empty($options['limit_max']) ? $limit_max : null;
-		$limit_min = !empty($options['limit_min']) ? $limit_min : null;
+		$initial   = !empty($options['initial'])   ? $options['initial'] : null;
+		$limit_max = !empty($options['limit_max']) ? $options['limit_max'] : null;
+		$limit_min = !empty($options['limit_min']) ? $options['limit_min'] : null;
 
-		return ["action" => $this->create_action_builder("date",$label,["post"=>$post],"datetime",$initial,$limit_max,$limit_min),"icon" => $icon_url];
+		return ["action" => $this->create_action_builder("date",$label,["post"=>$post],$date_mode,$initial,$limit_max,$limit_min),"icon" => $icon_url];
 	}
 
 	/**
